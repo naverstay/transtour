@@ -1,0 +1,69 @@
+@import "variables";
+
+@font-face {
+  font-family: 'transtour_icons';
+  src:  url('#{$icomoon-font-path}/transtour_icons.eot?f9m5vi');
+  src:  url('#{$icomoon-font-path}/transtour_icons.eot?f9m5vi#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/transtour_icons.ttf?f9m5vi') format('truetype'),
+    url('#{$icomoon-font-path}/transtour_icons.woff?f9m5vi') format('woff'),
+    url('#{$icomoon-font-path}/transtour_icons.svg?f9m5vi#transtour_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'transtour_icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-arrow_ne {
+  &:before {
+    content: $i-arrow_ne; 
+  }
+}
+.i-chevron_l {
+  &:before {
+    content: $i-chevron_l; 
+  }
+}
+.i-chevron_r {
+  &:before {
+    content: $i-chevron_r; 
+  }
+}
+.i-fb {
+  &:before {
+    content: $i-fb; 
+  }
+}
+.i-in {
+  &:before {
+    content: $i-in; 
+  }
+}
+.i-pin {
+  &:before {
+    content: $i-pin; 
+  }
+}
+.i-tg {
+  &:before {
+    content: $i-tg; 
+  }
+}
+.i-phone {
+  &:before {
+    content: $i-phone; 
+  }
+}
+
