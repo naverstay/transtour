@@ -1,27 +1,60 @@
 //************  buttons
 
 .btn_v1 {
-  height: 50px;
+  height: 53px;
 
-  &.callback_btn {
+  &.action_btn {
+    display: inline-block;
+    vertical-align: top;
     cursor: pointer;
-    border-radius: 25px;
-    padding: 16px 24px;
-    font-weight: 500;
-    
-    &:before {
-      font-size: 18px;
-    }
-    
+    border-radius: 3px;
+    padding: 16px 59px;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 40px 0 5px;
+  }
+
+  &.learn_more {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 16px 38px;
+    font-weight: 700;
+    font-size: 18px;
   }
 
 }
 
-.green_btn {
-  color: #fff;
+.yellow_btn {
+  @include transition_all(background .3s);
+  color: $gl_blue;
+  background: $gl_yellow;
+
+  &:hover {
+    background: #d8a200;
+  }
+
+  &:active {
+    background: #d8a200;
+  }
 }
 
-.btn_red {
-  color: #fff;
-  background: #f46b65;
+.blue_btn {
+  @include transition_all(background .3s, color .3s);
+  color: $gl_blue;
+  background: #fff;
+  border: 1px solid $gl_blue;
+
+  &:hover {
+    color: #fff;
+    background: #023a87;
+    border-color: #023a87;
+  }
+
+  &:active {
+    color: #fff;
+    background: #002e6d;
+    border-color: #002e6d;
+  }
 }

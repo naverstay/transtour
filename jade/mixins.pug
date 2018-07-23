@@ -8,8 +8,10 @@ mixin dev_head(page_title)
         meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
-        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;subset=cyrillic', media='all')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&amp;subset=cyrillic', media='all')
         link(rel='stylesheet', href='styles/main_global.css', media='all')
+        script(src='js/jquery1.10.js')
+        script(src='js/slick.js')
         script(src='js/script.js')
 
 mixin loop_while(counter)
@@ -17,4 +19,51 @@ mixin loop_while(counter)
     while i < counter
         -i++;
         block
+                    
+mixin header()
+    .header
+        .section_inner.clearfix
+            .logo_block
+                a.logo(href='#')
+                    img(src='i/logo.png')
 
+            ul.main_menu
+                li.menu_item._submenu
+                    a.menu_link.subMenuLink(href='#')
+                        span.link_text Управление поездками
+                    .sub_menu_w: ul.sub_menu
+                        li.menu_item
+                            a.sub_menu_link(href='#')
+                                span.link_text Бронирование
+                        li.menu_item
+                            a.sub_menu_link(href='#')
+                                span.link_text Проживание
+                        li.menu_item
+                            a.sub_menu_link(href='#')
+                                span.link_text Персональный консультант
+                        li.menu_item
+                            a.sub_menu_link(href='#')
+                                span.link_text Финансовая оптимизация
+                        li.menu_item
+                            a.sub_menu_link(href='#')
+                                span.link_text Анализ и отчетность
+                                
+                li.menu_item
+                    a.menu_link(href='#')
+                        span.link_text Корпоративные мероприятия
+                li.menu_item
+                    a.menu_link(href='#')
+                        span.link_text Бизнес консалтинг и поддержка
+                li.menu_item
+                    a.menu_link(href='#')
+                        span.link_text О компании
+                li.menu_item
+                    a.menu_link(href='#')
+                        span.link_text Контакты
+                        
+            a.mob_menu.mobMenuBtn(href='#')
+
+mixin footer()
+    .footer
+        .section_inner
+            

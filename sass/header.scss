@@ -5,16 +5,19 @@
   top: 0;
   right: 0;
   left: 0;
-  line-height: 100px;
 
   .section_inner {
-    padding: 0 25px;
+    max-width: none;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 10px 45px;
   }
 }
 
 .logo_block {
   float: left;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .logo {
@@ -27,31 +30,133 @@
   }
 }
 
-.lang_switcher {
-  float: left;
-  padding-left: 60px;
-}
-
-.callback_block {
-  float: right;
-}
-
 // *********  menu
 
 .main_menu {
+
+  > .menu_item {
+    position: relative;
+
+    @include respond-to-min($resp_step_2) {
+      margin-left: 50px;
+      float: left;
+    }
+  }
+
+  .menu_link {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  ._submenu {
+    .menu_link {
+      @extend %icon_pseudo;
+      padding-right: 22px;
+
+      &:before {
+        content: $i-chevron_d;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        margin-top: -7px;
+      }
+    }
+
+    &._open {
+      .sub_menu_w {
+        display: block;
+      }
+      
+      .menu_link {
+        &:before {
+          content: $i-chevron_u;
+        }
+      }
+    }
+
+  }
+
+  @include respond-to-max($resp_step_2) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: right;
+    padding-top: 16px;
+    padding-right: 16px;
+
+    > li {
+      float: left;
+
+      > .menu_link {
+        color: #fff;
+      }
+    }
+  }
 }
 
-.menu_item {
-  float: left;
-  margin: 0 17px;
+.sub_menu_w {
+  display: none;
+  
+  @include respond-to-min($resp_step_2) {
+    min-width: 335px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 28px;
+  }
+}
+
+.sub_menu {
+  position: relative;
+  background: $gl_blue;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid $gl_blue;
+  }
+
+  .sub_menu_link {
+    @include transition_all(background .3s, color .3s);
+    color: #fff;
+    display: block;
+    padding: 0 20px;
+    background: $gl_blue;
+    line-height: 51px;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+
+    .link_text {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+
+    &:hover {
+      color: #4c4c4c;
+      background: $gl_yellow;
+    }
+  }
 }
 
 .menu_link {
   cursor: pointer;
   position: relative;
   display: block;
-  padding-left: 32px;
+  letter-spacing: .13em;
   text-decoration: none;
-
 }
 

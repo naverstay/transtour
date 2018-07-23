@@ -1,12 +1,13 @@
 $pi: 3.14159265359;
 $square_root_of_2: 1.41421356237;
 
-$resp_step_2: 1040px;
+$resp_step_1: 768px;
+$resp_step_2: 1210px;
 
-$content-max-w: 1440px;
+$content-max-w: 1210px;
 
 $icomoon-font-path: "../fonts";
-$icomoon-font-name: 'air_icons';
+$icomoon-font-name: 'transtour_icons';
 
 $Roboto: 'Roboto', sans-serif;
 $CirceBold: 'CirceBold', sans-serif;
@@ -27,8 +28,8 @@ $cross_font_TimesNewRoman: 'Times New Roman', 'Times CY', 'Nimbus Roman No9 L', 
 $cross_font_TrebuchetMS: 'Trebuchet MS', 'Helvetica CY', sans-serif;
 $cross_font_Verdana: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif;
 
-$default_t_color: #4a5669;
 $placeholder_color: #ccc;
+$default_t_color: #4c4c4c;
 $gl_gray: #4c4c4c;
 $gl_yellow: #fdc210;
 $gl_blue: #023a87;
