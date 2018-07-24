@@ -61,9 +61,36 @@ mixin header()
                     a.menu_link(href='#')
                         span.link_text Контакты
                         
-            a.mob_menu.mobMenuBtn(href='#')
+            a.mob_menu_btn.mobMenuBtn(href='#')
+                span
 
 mixin footer()
     .footer
         .section_inner
-            
+            .footer_col._col_1
+                .footer_caption Компания:
+                ul.footer_menu
+                    li: a.footer_link(href='#'): span Управление поездками
+                    li: a.footer_link(href='#'): span Корпоративные мероприятия
+                    li: a.footer_link(href='#'): span Бизнес консалтинг и поддержка
+                    
+                ul.footer_menu
+                    li: a.footer_link(href='#'): span О компании
+                    li: a.footer_link(href='#'): span Контакты
+                    
+            .footer_col._col_2
+                .footer_caption Контакты:
+
+                ul.footer_menu
+                    li: a.footer_link._icon.i-pin(href='#'): span г. Москва
+                    li: a.footer_link._icon.i-phone(href='tel:0671234567'): span 067 123 45 67
+                    
+            .footer_col._col_3
+                .footer_caption Мы в соцсетях:
+
+                ul.footer_action
+                    li: a.action_link.i-fb(href='#') 
+                    li: a.action_link.i-in(href='#') 
+                    li: a.action_link.i-tg(href='#') 
+                    
+            .copyright © 2018 Transtour

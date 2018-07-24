@@ -1,10 +1,12 @@
 //*************************** header
 
 .header {
+  @include transition_all(background .3s, border .3s);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
+  padding: 10px 0;
 
   .section_inner {
     max-width: none;
@@ -13,11 +15,25 @@
   @include respond-to-min($resp_step_2) {
     padding: 10px 45px;
   }
+
+  @include respond-to-max($resp_step_2) {
+    height: 72px;
+    position: fixed;
+
+    &._white,
+    .menu_opened & {
+      background: #fff;
+      border-bottom: 1px solid #ebedef;
+    }
+  }
 }
 
 .logo_block {
   float: left;
-  padding-left: 5px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-left: 5px;
+  }
 }
 
 .logo {
@@ -70,7 +86,7 @@
       .sub_menu_w {
         display: block;
       }
-      
+
       .menu_link {
         &:before {
           content: $i-chevron_u;
@@ -81,11 +97,17 @@
   }
 
   @include respond-to-max($resp_step_2) {
+    @include transition_all(transform .3s);
+    @include transform_translate(100%, 0);
     position: fixed;
-    top: 0;
+    top: 72px;
     bottom: 0;
     left: 0;
     right: 0;
+
+    .menu_opened & {
+      @include transform_translate(0, 0);
+    }
   }
 
   @include respond-to-min($resp_step_2) {
@@ -103,9 +125,74 @@
   }
 }
 
+.mob_menu_btn {
+  float: right;
+  position: relative;
+  z-index: 7;
+  width: 44px;
+  height: 44px;
+
+  &:before {
+    top: 14px;
+  }
+
+  &:after {
+    top: 30px;
+  }
+
+  span,
+  &:after,
+  &:before {
+    @include transition_all(transform .3s, top .3s);
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 26px;
+    height: 4px;
+    background: #fff;
+
+    ._white & {
+      background: $gl_blue;
+    }
+  }
+
+  span {
+    @include transition_all(opacity .3s);
+    width: 26px;
+    height: 4px;
+    top: 22px;
+    opacity: 1;
+  }
+
+  .menu_opened & {
+    &:after,
+    &:before {
+      background: $gl_blue;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+      top: 21px;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      top: 21px;
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    display: none;
+  }
+}
+
 .sub_menu_w {
   display: none;
-  
+
   @include respond-to-min($resp_step_2) {
     min-width: 335px;
     position: absolute;

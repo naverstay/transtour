@@ -1,12 +1,138 @@
-
 .footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 150px;
-  box-shadow: inset 0 0 0 1px blue;
+  background: $gl_blue;
 
+  @include respond-to-min($resp_step_1) {
+    padding-top: 68px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    .section_inner {
+      padding: 0;
+    }
+  }
+
+  @include respond-to-max($resp_step_1) {
+    text-align: center;
+  }
+}
+
+.footer_caption {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  letter-spacing: .075em;
+}
+
+.footer_link {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: .06em;
+
+  &:hover span {
+    text-decoration: underline;
+  }
+
+  &._icon {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -4px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+
+    &:before {
+      position: absolute;
+      top: -3px;
+      left: 2px;
+      font-size: 30px;
+    }
+  }
+}
+
+.footer_menu {
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: left;
+    width: 47%;
+
+    &:first-child {
+      width: 53%;
+    }
+  }
+}
+
+.footer_col {
+  margin-bottom: 25px;
+
+  @include respond-to-min($resp_step_1) {
+    float: left;
+    margin-bottom: 53px;
+
+    &._col_1 {
+      width: 43%;
+    }
+    
+    &._col_2 {
+      width: 37%;
+    }
+
+    &._col_3 {
+      float: right;
+      max-width: 20%;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 98px;
+
+    &._col_1 {
+      width: 51%;
+    }
+
+    &._col_2 {
+      width: 29%;
+    }
+  }
+}
+
+.footer_action {
+
+  @include respond-to-min($resp_step_1) {
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+  }
+}
+
+.action_link {
+  display: block;
+  position: relative;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+
+  &:before {
+
+  }
+}
+
+.copyright {
+  clear: both;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  padding-bottom: 32px;
 }
 
 $rectWidth: $content-max-w;
@@ -18,7 +144,7 @@ $rectWidth: $content-max-w;
   max-width: 100%;
   top: 0;
   bottom: 0;
-  border:  solid red;
+  border: solid red;
   border-width: 0 1px;
   z-index: 10;
   pointer-events: none;

@@ -5,7 +5,6 @@ html(lang='ru')
 
     body
         .wrapper
-            .rect_1024
             .base
                 div.main_content
                     .hero_block
@@ -22,20 +21,20 @@ html(lang='ru')
                             ul.feature_list
                                 li
                                     .feature_block._optimization
-                                        .feature_caption Оптимизация управления поездками
+                                        .feature_caption Оптимизация управления&nbsp;поездками
                                         p Инструменты которые позволяют нам занимать лидирующие позиции в оказании услуг деловых поездок
                                         .feature_block_control
                                             a.btn_v1.blue_btn.learn_more(href='#')
                                                 span Узнать подробнее
                                 li
                                     .feature_block._research
-                                        .feature_caption Исследования, знания, опыт
-                                        p Посмотрите как мы накапливаем знания и опыт о путешествиях
+                                        .feature_caption Исследования, знания,&nbsp;опыт
+                                        p Посмотрите как мы накапливаем знания и&nbsp;опыт&nbsp;о&nbsp;путешествиях
                                         .feature_block_control
                                             a.btn_v1.blue_btn.learn_more(href='#')
                                                 span Узнать подробнее
                                                 
-                            h2.section_title Подберите подходящие вам инструменты для управления деловыми поездками                    
+                            h2.section_title Подберите подходящие вам инструменты для&nbsp;управления деловыми поездками                    
                             .company_info Моя компания...
                             
                             ul.costs_list
@@ -61,7 +60,7 @@ html(lang='ru')
                     
                     .solution_section
                         .section_inner
-                            h2.section_title Решения, которые использует наша компания
+                            h2.section_title Решения, которые использует наша&nbsp;компания
                             ul.solution_list
                                 li 
                                     .solution_block
@@ -70,10 +69,10 @@ html(lang='ru')
                                             .solution_icon
                                                 img(src='svg/smartphone.svg')
                                         
-                                        .solution_caption
+                                        .solution_caption.sameHeight
                                             span Управление поездками
                                 
-                                        p Цифровые инструменты и сервисы лежат в основе всех наших услуг
+                                        p.sameHeight2 Цифровые инструменты и сервисы лежат в основе всех наших услуг
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
@@ -84,10 +83,10 @@ html(lang='ru')
                                             .solution_icon
                                                 img(src='svg/calendar.svg')
                                         
-                                        .solution_caption
+                                        .solution_caption.sameHeight
                                             span Организация и проведение корпоративных мероприятий
                                 
-                                        p Создаем события, которые оставляют впечатлени
+                                        p.sameHeight2 Создаем события, которые оставляют впечатлени
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
@@ -98,10 +97,10 @@ html(lang='ru')
                                             .solution_icon
                                                 img(src='svg/trend.svg')
                                         
-                                        .solution_caption
+                                        .solution_caption.sameHeight
                                             span Помощь и поддержка на каждом шаге
                                 
-                                        p Создаем события, которые оставляют впечатлени
+                                        p.sameHeight2 Создаем события, которые оставляют впечатлени
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
@@ -140,7 +139,7 @@ html(lang='ru')
                                         p “Once again, technology has helped us reduce company and travel risk ”
                                     a.review_link(href='#')
                             li._wide
-                                .review_block(style='background-image: url(i/review_5.jpg);')
+                                .review_block._wide(style='background-image: url(i/review_5.jpg);')
                                     .review_inner
                                         .review_logo Microsoft
                                         p “Once again, technology has helped us reduce company and travel risk ”
@@ -156,8 +155,6 @@ html(lang='ru')
                                 a.prevArticle.slider_control._prev(href='#')
                                 a.nextArticle.slider_control._next(href='#')
                                 .articleSlider
-                                    //.slick-list
-                                    //    .slick-track
                                     +loop_while(6)
                                         .slide
                                             .article_block
@@ -165,14 +162,16 @@ html(lang='ru')
                                                     img(src='i/article.jpg')
                                                     
                                                 .article_inner
-                                                    .article_caption Simplify the Process of Onboarding New Travelers
+                                                    .article_caption.sameHeight3 Simplify the Process of&nbsp;Onboarding New&nbsp;Travelers
                                                     .article_date 17.06.2018
                                                         
-                                                    p It can seem like a cycle stuck on repeat — onboarding new employees entering the travel 
+                                                    p.sameHeight4 It can seem like a cycle stuck on repeat — onboarding new employees entering the travel 
                                                     p
                                                         a.gl_link(href='#') Читать больше
                             
+                            .text_center
+                                a.gl_link(href='#') Просмотреть все статьи
+                                
             +header()
             +footer()
-                
-                
+            
