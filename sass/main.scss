@@ -52,6 +52,8 @@ body {
 .hero_block {
   @extend %global_flex_block_column_nowrap_center_center;
   position: relative;
+  min-height: 100vh;
+  overflow: hidden;
   height: 490px;
   color: #fff;
   text-align: center;
@@ -60,6 +62,10 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  .section_inner {
+    position: relative;
+  }
 
   p {
     font-size: 15px;
@@ -70,6 +76,10 @@ body {
 
     @include respond-to-max($resp_step_2) {
       line-height: 1.5;
+    }
+
+    @include respond-to-max($resp_step_1) {
+      line-height: 1.2;
     }
   }
 
@@ -90,16 +100,37 @@ body {
   }
 }
 
+.hero_video_holder {
+  @extend %hor_vert_centr;
+  position: absolute;
+  pointer-events: none;
+  //min-width: 100%;
+  //min-height: 100%;
+  //&:before {
+  //  content: '';
+  //  display: block;
+  //  padding-bottom: 56.25%;
+  //}
+}
+
+.hero_video {
+  @extend %hor_vert_centr;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .hero_caption {
   color: #fff;
   font-weight: 800;
   font-size: 32px;
-  line-height: 1.3;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 
   @include respond-to-min($resp_step_1) {
     font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -111,7 +142,7 @@ body {
 
 .feature_section {
   position: relative;
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 
   &:before {
     content: '';
@@ -133,6 +164,7 @@ body {
 
   @include respond-to-min($resp_step_1) {
     margin-top: -100px;
+    padding-bottom: 45px;
 
     &:before {
       top: 100px;
@@ -146,12 +178,13 @@ body {
 
 .company_info {
   font-size: 20px;
-  margin-bottom: 45px;
+  margin-bottom: 22px;
   text-align: center;
   letter-spacing: .065em;
 
   @include respond-to-min($resp_step_1) {
     font-size: 24px;
+    margin-bottom: 45px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -163,10 +196,11 @@ body {
 .feature_list {
   @extend %clearfix;
   box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
-  margin-bottom: 150px;
+  margin-bottom: 60px;
 
   @include respond-to-min($resp_step_1) {
     @include flex_block(row nowrap, center, stretch);
+    margin-bottom: 150px;
 
     li {
       float: left;
@@ -182,7 +216,7 @@ body {
 .feature_block {
   min-height: 100%;
   position: relative;
-  padding: 52px 25px 280px;
+  padding: 57px 0 290px;
   text-align: center;
   background: #fff;
 
@@ -192,7 +226,8 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    height: 100px;
+    height: 100px + 50px;
+    //height: 21.45%;
   }
 
   &._optimization {
@@ -208,6 +243,12 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+      }
+
+      @include respond-to-max($resp_step_1) {
+        right: -35px;
+        left: -30px;
+        height: 143px;
       }
     }
 
@@ -233,11 +274,26 @@ body {
       @include respond-to-max($resp_step_2) {
         right: 20px;
         left: 15px;
-        height: 115px;
+        height: 115px + 50px;
+        //height: 24.665%;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+      }
+    }
+
+    @include respond-to-max($resp_step_1) {
+      padding-bottom: 315px;
+
+      &:before {
+        right: 5px;
+        left: 5px;
+        height: 153px;
+      }
+
+      .feature_block_control {
+        bottom: 235px;
       }
     }
   }
@@ -252,6 +308,11 @@ body {
       font-size: 14px;
       line-height: 1.45;
     }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    padding: 52px 25px 280px;
+    //padding: 52px 25px 77%;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -269,9 +330,15 @@ body {
 
 .feature_block_control {
   position: absolute;
-  bottom: 143px;
+  bottom: 210px;
   right: 0;
   left: 0;
+
+  @include respond-to-min($resp_step_1) {
+    //bottom: 143px;
+    bottom: 190px;
+    //bottom: 30.6%;
+  }
 
   @include respond-to-min($resp_step_2) {
     bottom: 233px;
@@ -295,7 +362,7 @@ body {
   text-align: center;
 
   li {
-    margin-bottom: 30px;
+    margin-bottom: 38px;
   }
 
   @include respond-to-min($resp_step_1) {
@@ -305,6 +372,7 @@ body {
     li {
       float: left;
       width: 33%;
+      margin-bottom: 30px;
     }
   }
 
@@ -315,10 +383,14 @@ body {
 }
 
 .costs_block {
-  padding: 0 20px;
+  padding: 0 50px;
 
   .gl_link {
     font-size: 16px;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    padding: 0 20px;
   }
 }
 
@@ -349,7 +421,7 @@ body {
 }
 
 .solution_section {
-  padding: 150px 0 60px;
+  padding: 65px 0 20px;
   position: relative;
   margin: 0 auto;
   max-width: 1920px;
@@ -357,6 +429,11 @@ body {
 
   .section_inner {
     position: relative;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    padding-top: 150px;
+    padding-bottom: 60px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -369,6 +446,10 @@ body {
 
   li {
     margin-bottom: 10px;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    padding-top: 5px;
   }
 
   @include respond-to-min($resp_step_1) {
@@ -403,6 +484,12 @@ body {
     font-size: 16px;
     margin-top: 15px;
     padding: 0 20px;
+
+    @include respond-to-max($resp_step_1) {
+      + p {
+        margin-top: 20px;
+      }
+    }
   }
 
   @include respond-to-max($resp_step_2) {
@@ -420,12 +507,23 @@ body {
 }
 
 .solution_img {
+  @include transition_all(transform .3s);
   position: relative;
-  margin-bottom: 56px;
+  margin-bottom: 50px;
 
   > img {
     display: block;
     width: 100%;
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.05) translateZ(10px);
+    transform: scale(1.05) translateZ(10px);
+    z-index: 2;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    margin-bottom: 56px;
   }
 }
 
@@ -450,9 +548,7 @@ body {
 
 .solution_caption {
   font-size: 18px;
-  line-height: 50px;
-  padding: 0 20px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   color: $gl_blue;
   letter-spacing: .07em;
 
@@ -460,6 +556,12 @@ body {
     display: inline-block;
     vertical-align: middle;
     line-height: 1.35;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    line-height: 50px;
+    margin-bottom: 24px;
+    padding: 0 20px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -507,7 +609,7 @@ body {
   font-weight: 700;
   font-size: 24px;
   max-width: 730px;
-  margin: 0 auto 60px;
+  margin: 45px auto 50px;
 
   @include respond-to-min($resp_step_1) {
     font-size: 30px;
@@ -542,8 +644,8 @@ body {
 .review_inner {
   position: absolute;
   top: 47px;
-  right: 45px;
-  left: 45px;
+  right: 5px;
+  left: 5px;
   bottom: 55px;
   text-align: center;
   color: #fff;
@@ -554,6 +656,11 @@ body {
     line-height: 1.4;
     max-width: 300px;
     margin: 0 auto;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    right: 45px;
+    left: 45px;
   }
 }
 
@@ -572,7 +679,7 @@ body {
   @extend %icon_pseudo;
   position: absolute;
   bottom: 24px;
-  right: 24px;
+  right: 17px;
   border: 2px solid #fff;
   color: #fff;
   border-radius: 2px;
@@ -598,17 +705,21 @@ body {
     padding: 0 10px 0 18px;
     letter-spacing: .06em;
   }
+
+  @include respond-to-min($resp_step_1) {
+    right: 24px;
+  }
 }
 
 .article_section {
-  padding: 33px 0 100px;
+  padding: 33px 0 45px;
 
   .section_title {
     margin-bottom: 15px;
   }
 
   @include respond-to-min($resp_step_1) {
-
+    padding-bottom: 100px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -637,17 +748,16 @@ body {
   cursor: pointer;
 
   &._prev {
-    left: -37px;
+    left: -22px;
     background: url(../svg/chevron_l.svg) no-repeat 50% 50%;
   }
 
   &._next {
-    right: -37px;
+    right: -22px;
     background: url(../svg/chevron_r.svg) no-repeat 50% 50%;
   }
 
   @include respond-to-max($resp_step_2) {
-
     &._next,
     &._prev {
       top: -22px;
@@ -657,7 +767,7 @@ body {
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      
+
       &:before {
         content: '';
         position: absolute;
@@ -678,6 +788,10 @@ body {
     }
   }
 
+  @include respond-to-max($resp_step_1) {
+    display: none !important;
+  }
+
   &:hover {
     opacity: 1;
   }
@@ -690,8 +804,20 @@ body {
     margin-bottom: 12px;
   }
 
+  @include respond-to-max($resp_step_1) {
+    padding-bottom: 15px;
+
+    .slide:nth-child(n+4) {
+      display: none;
+    }
+  }
+
   @include respond-to-min($resp_step_1) {
-    margin: 0 -10px;
+    margin: 0 -20px;
+
+    .slick-slider {
+      padding: 0 10px;
+    }
 
     .slide {
       padding: 0 10px;
@@ -701,7 +827,11 @@ body {
   }
 
   @include respond-to-min($resp_step_2) {
-    margin: 0 -14px;
+    margin: 0 -28px;
+
+    .slick-slider {
+      padding: 0 14px;
+    }
 
     .slide {
       padding: 0 14px;
@@ -715,11 +845,80 @@ body {
   text-align: center;
 }
 
+.flip_container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+$flip_time: .5s;
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: $flip_time;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  -moz-transition: $flip_time;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+  -o-transition: $flip_time;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+  -ms-transition: $flip_time;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+  transition: $flip_time;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: relative;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+}
+
+.front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flip_container:hover .front {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
 .article_inner {
-  padding: 25px 5px 10px;
+  padding: 33px 5px 10px;
 
   p {
     margin-bottom: 20px;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    padding: 25px 5px 10px;
   }
 
   @include respond-to-min($resp_step_2) {
@@ -747,12 +946,33 @@ body {
 .article_caption {
   color: $gl_blue;
   font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
+
+  @include respond-to-min($resp_step_1) {
+    margin-bottom: 16px;
+  }
 
   @include respond-to-min($resp_step_2) {
     font-size: 20px;
     margin-bottom: 8px;
   }
+}
+
+.motion {
+  @include transition_all(transform .3s, opacity .3s);
+  @include transform_translate(-200px, 0);
+  opacity: 0;
+  position: relative;
+
+  &.right {
+    @include transform_translate(200px, 0);
+  }
+  
+  &.active {
+    @include transform_translate(0, 0);
+    opacity: 1;
+  }
+
 }
 
 // **********  text
@@ -761,10 +981,11 @@ body {
   text-align: center;
   font-size: 22px;
   max-width: 770px;
-  margin: 0 auto 55px;
+  margin: 0 auto 30px;
   color: $gl_blue;
 
   @include respond-to-min($resp_step_1) {
+    margin-bottom: 55px;
     font-size: 30px;
   }
 }
@@ -793,3 +1014,4 @@ body {
 .text_upper {
   text-transform: uppercase;
 }
+

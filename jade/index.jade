@@ -7,7 +7,10 @@ html(lang='ru')
         .wrapper
             .base
                 div.main_content
-                    .hero_block
+                    .hero_block.heroBlock
+                        .hero_video_holder.heroVideoHolder
+                            iframe.hero_video.heroVideo(width="560" height="315" src="https://www.youtube.com/embed/WdLD2KOAbzo?autoplay=1&cc_load_policy=1&controls=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media") 
+
                         .section_inner
                             .hero_caption Умные деловые поездки
                             p Поднимите свой бизнес на новый уровень с помощью оптимизации расходов, наших технологий, знаний и опыта
@@ -38,7 +41,7 @@ html(lang='ru')
                             .company_info Моя компания...
                             
                             ul.costs_list
-                                li
+                                li.motion
                                     .costs_block
                                         .costs_img
                                             img(src='svg/ticket1.svg')
@@ -51,7 +54,7 @@ html(lang='ru')
                                         .costs_info тратит на авиабилеты от&nbsp;1&nbsp;до&nbsp;3&nbsp;миллионов ₽  в месяц
 
                                         a.gl_link(href='#') Подробнее
-                                li
+                                li.motion.right
                                     .costs_block
                                         .costs_img
                                             img(src='svg/ticket3.svg')
@@ -62,7 +65,7 @@ html(lang='ru')
                         .section_inner
                             h2.section_title Решения, которые использует наша&nbsp;компания
                             ul.solution_list
-                                li 
+                                li.motion
                                     .solution_block
                                         .solution_img
                                             img(src='i/solution_1.jpg')
@@ -76,7 +79,7 @@ html(lang='ru')
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
-                                li 
+                                li
                                     .solution_block
                                         .solution_img
                                             img(src='i/solution_2.jpg')
@@ -90,7 +93,7 @@ html(lang='ru')
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
-                                li 
+                                li.motion.right
                                     .solution_block
                                         .solution_img
                                             img(src='i/solution_3.jpg')
@@ -104,7 +107,7 @@ html(lang='ru')
                                         p 
                                             a.gl_link(href='#') Подобрать решение
                                             
-                            .review_caption В прошлом году 3 миллиона сотрудников доверились нам    
+                            .review_caption В прошлом году 3&nbsp;миллиона сотрудников доверились нам    
                                 
                         ul.review_list
                             li
@@ -157,7 +160,7 @@ html(lang='ru')
                                 .articleSlider
                                     +loop_while(6)
                                         .slide
-                                            .article_block
+                                            .flip_container: .flipper: .front: .article_block
                                                 .article_img
                                                     img(src='i/article.jpg')
                                                     
@@ -168,7 +171,7 @@ html(lang='ru')
                                                     p.sameHeight4 It can seem like a cycle stuck on repeat — onboarding new employees entering the travel 
                                                     p
                                                         a.gl_link(href='#') Читать больше
-                            
+
                             .text_center
                                 a.gl_link(href='#') Просмотреть все статьи
                                 

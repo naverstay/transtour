@@ -11,7 +11,11 @@
     padding: 16px 59px;
     font-weight: 700;
     font-size: 18px;
-    margin: 40px 0 15px;
+    margin: 20px 0 15px;
+
+    @include respond-to-min($resp_step_1) {
+      margin-top: 40px;
+    }
 
     @include respond-to-min($resp_step_2) {
       margin-bottom: 5px;
@@ -27,7 +31,6 @@
     font-weight: 700;
     font-size: 18px;
   }
-
 }
 
 .yellow_btn {
