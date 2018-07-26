@@ -9,7 +9,9 @@ html(lang='ru')
                 div.main_content
                     .hero_block.heroBlock
                         .hero_video_holder.heroVideoHolder
-                            iframe.hero_video.heroVideo(width="560" height="315" src="https://www.youtube.com/embed/WdLD2KOAbzo?autoplay=1&cc_load_policy=1&controls=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media") 
+                            //-iframe.hero_video.heroVideo(width="560" height="315" src="https://www.youtube.com/embed/WdLD2KOAbzo?autoplay=1&cc_load_policy=1&controls=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media") 
+                            video#homepage-video.hero_video.heroVideo(data-start-time="7" preload="auto" buffered="" playsinline="" poster="i/hero.jpg" loop="" muted="")
+                                source(src="video/video_2.mp4", type="video/mp4")
 
                         .section_inner
                             .hero_caption Умные деловые поездки
