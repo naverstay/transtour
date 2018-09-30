@@ -30,6 +30,11 @@
     padding: 16px 38px;
     font-weight: 700;
     font-size: 18px;
+    
+    .slick-slide & {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 }
 
@@ -51,6 +56,25 @@
   @include transition_all(background .3s, color .3s);
   color: $gl_blue;
   background: #fff;
+  border: 1px solid $gl_blue;
+
+  &:hover {
+    color: #fff;
+    background: #023a87;
+    border-color: #023a87;
+  }
+
+  &:active {
+    color: #fff;
+    background: #002e6d;
+    border-color: #002e6d;
+  }
+}
+
+.transp_blue_btn {
+  @include transition_all(background .3s, color .3s);
+  color: $gl_blue;
+  background: transparent;
   border: 1px solid $gl_blue;
 
   &:hover {

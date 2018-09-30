@@ -1,0 +1,165 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Transtour сервис')
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    #hero_section.hero_block.heroBlock
+                        .hero_video_holder.heroVideoHolder
+                            //-iframe.hero_video.heroVideo(width="560" height="315" src="https://www.youtube.com/embed/WdLD2KOAbzo?autoplay=1&cc_load_policy=1&controls=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media") 
+                            video#homepage-video.hero_video.heroVideo(data-start-time="7" preload="auto" buffered="" playsinline="" poster="i/hero.jpg" loop="" muted="")
+                                source(src="video/video_2.mp4", type="video/mp4")
+
+                        .section_inner
+                            .hero_caption Решения и услуги
+                            p Решения, которые обеспечат вас уверенностью
+                            
+                    #solution_section.solution_section.wayPointSection
+                        .section_inner
+                            h2.section_title Решения и услуги
+                            ul.solution_list
+                                li.motion
+                                    .solution_block
+                                        .solution_img
+                                            img(src='i/service_1.jpg')
+                                            .solution_icon
+                                                img(src='svg/smartphone.svg')
+                                        
+                                        .solution_caption.sameHeight
+                                            span Управление поездками
+                                
+                                        p.sameHeight2 Цифровые инструменты и сервисы лежат в основе всех наших услуг
+                                        p 
+                                            a.gl_link(href='#') Подобрать решение
+                                            
+                                li
+                                    .solution_block
+                                        .solution_img
+                                            img(src='i/service_2.jpg')
+                                            .solution_icon
+                                                img(src='svg/globe.svg')
+                                        
+                                        .solution_caption.sameHeight
+                                            span В воздухе и на суше
+                                
+                                        p.sameHeight2 Создаем события, которые оставляют впечатлени
+                                        p 
+                                            a.gl_link(href='#') Подобрать решение
+                                            
+                                li.motion.right
+                                    .solution_block
+                                        .solution_img
+                                            img(src='i/service_3.jpg')
+                                            .solution_icon
+                                                img(src='svg/thumb.svg')
+                                        
+                                        .solution_caption.sameHeight
+                                            span Система рекомендаций
+                                
+                                        p.sameHeight2 Создаем события, которые оставляют впечатлени
+                                        p 
+                                            a.gl_link(href='#') Подобрать решение
+                                            
+                    #assistance_section.assistance_section.wayPointSection
+                        .section_inner
+                            h2.section_title Ассистент
+                            
+                            ul.tab_controls
+                                li._active: a.tabLink.tab_link(href='#optimization_tab_1') Коммуникации в поездке
+                                li: a.tabLink.tab_link(href='#optimization_tab_2') Другие услуги
+                                    
+                            .tab_holder.tabSlider
+                                #assistance_tab_1.tab_unit
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link Коммуникации в поездке
+                                    .assistance_image
+                                        img(src='i/phone.png')
+                                    .assistance_info
+                                        h3.assistance_caption Управление поездкой в одно касание
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                        
+                                        a.btn_v1.transp_blue_btn.learn_more(href='#')
+                                            span Подобрать решение
+                                             
+                                #assistance_tab_2.tab_unit(style='display:none')
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link Другие услуги
+                                    .assistance_image
+                                        img(src='i/phone.png')
+                                    .assistance_info
+                                        h3.assistance_caption Управление поездкой в одно касание
+                                        p 22222 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+
+                                        a.btn_v1.transp_blue_btn.learn_more(href='#')
+                                            span Подобрать еще решение
+                            .tabDots.tab_dots
+                                
+                    #optimization_section.optimization_section.wayPointSection
+                        .section_inner
+                            h2.section_title Оптимизация
+                            
+                            ul.tab_controls
+                                li._active: a.tabLink.tab_link(href='#assistance_tab_1') Тревел-политика
+                                li: a.tabLink.tab_link(href='#assistance_tab_2') Перебронирование
+                                    
+                            .tab_holder.tabSlider
+                                #optimization_tab_1.tab_unit
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link Тревел-политика
+                                    .assistance_image
+                                        img(src='i/mac.png')
+                                    .assistance_info
+                                        h3.assistance_caption Подзаголовок
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                        
+                                        a.btn_v1.transp_blue_btn.learn_more(href='#')
+                                            span Подобрать решение
+                                             
+                                #optimization_tab_2.tab_unit(style='display:none')
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link Перебронирование
+                                    .assistance_image
+                                        img(src='i/mac.png')
+                                    .assistance_info
+                                        h3.assistance_caption Подзаголовок
+                                        p 22222 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+
+                                        a.btn_v1.transp_blue_btn.learn_more(href='#')
+                                            span Подобрать еще решение
+                            .tabDots.tab_dots
+                                
+                    #analytics_section.analytics_section.wayPointSection
+                        .section_inner
+                            h2.section_title Анализ
+                            
+                            ul.tab_controls
+                                li._active: a.tabLink.tab_link(href='#analytics_tab_1') Анализ и отчетность
+                                    
+                            .tab_holder.tabSlider
+                                #analytics_tab_1.tab_unit
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link Анализ и отчетность
+                                    .assistance_image
+                                        img(src='i/mac.png')
+                                    .assistance_info
+                                        h3.assistance_caption Полная информация для решительных действий
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                        
+                                        a.btn_v1.transp_blue_btn.learn_more(href='#')
+                                            span Подобрать решение
+                            .tabDots.tab_dots
+                                
+                .aside_pagination
+                    ul.pagination_list
+                        li: a.aside_p_link.asideLink(href='#solution_section'): span Услуги
+                        li: a.aside_p_link.asideLink(href='#assistance_section'): span Ассистент
+                        li: a.aside_p_link.asideLink(href='#optimization_section'): span Оптимизация
+                        li: a.aside_p_link.asideLink(href='#analytics_section'): span Анализ
+                    
+                
+            +header()
+            +footer()
+            

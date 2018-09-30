@@ -1,3 +1,86 @@
+.aside_pagination {
+  @extend %vert_centr;
+  position: fixed;
+  display: none;
+
+  @include respond-to-min($resp_step_2) {
+    right: 120px;
+    display: block;
+  }
+}
+
+.pagination_list {
+  text-align: right;
+
+  li {
+    position: relative;
+    margin-top: 88px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 62px;
+      background: #aeafaf;
+      right: 5px;
+      bottom: 100%;
+      margin-bottom: 13px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+      
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.aside_p_link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 40px;
+  text-transform: uppercase;
+  color: #aeafaf;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    background: #aeafaf;
+    right: 0;
+    top: 50%;
+    margin-top: -8px;
+  }
+  
+  ._active & {
+    color: $gl_blue;
+    
+    &:before {
+      background: $gl_blue;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 50%;
+      margin-top: -21px;
+      right: -13px;
+      border: 3px solid $gl_blue;
+      width: 42px;
+      height: 42px;
+    }
+    
+  }
+}
+
 .footer {
   background: $gl_blue;
 
@@ -91,7 +174,7 @@
       margin-bottom: 30px;
     }
   }
-  
+
   @include respond-to-min($resp_step_1) {
     float: left;
     margin-bottom: 53px;
@@ -99,7 +182,7 @@
     &._col_1 {
       width: 43%;
     }
-    
+
     &._col_2 {
       width: 37%;
     }
@@ -157,29 +240,9 @@
   padding-bottom: 32px;
 }
 
-$rectWidth: $content-max-w;
-
-.rect_1024 {
-  @extend %hor_centr;
-  position: absolute;
-  width: $rectWidth;
-  max-width: 100%;
-  top: 0;
-  bottom: 0;
-  border: solid red;
-  border-width: 0 1px;
-  z-index: 10;
-  pointer-events: none;
-
-  &:after {
-    @extend %hor_centr;
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: red;
+.mob_only {
+  
+  @include respond-to-min($resp_step_1) {
+    display: none !important;
   }
 }
-
-

@@ -1,4 +1,4 @@
-var $body, $doc, $header, articleSlider, heroVideoHolder, heroBlock, slider_timer, $motion, win_h = 0;
+var $body, $doc, $header, articleSlider, tabSlider, heroVideoHolder, heroBlock, slider_timer, $motion, win_h = 0;
 
 function hideDropDowns() {
     $('._open').removeClass('_open');
@@ -13,7 +13,16 @@ $(function ($) {
     heroBlock = $('.heroBlock');
     heroVideoHolder = $('.heroVideoHolder');
 
-    $body.delegate('.subMenuLink', 'click', function () {
+    $body.delegate('.tabLink', 'click', function (e) {
+        var btn = $(e.target), target = $(btn.attr('href'));
+
+        if (target.length) {
+            target.show().siblings().hide();
+            btn.parent().addClass('_active').siblings().removeClass('_active');
+        }
+
+        return false;
+    }).delegate('.subMenuLink', 'click', function () {
         $(this).parent().toggleClass('_open');
         return false;
     }).delegate('.mobMenuBtn', 'click', function () {
@@ -28,6 +37,8 @@ $(function ($) {
     });
 
     initArticleSlider();
+
+    initWayPoints();
 
     resizeUpdater();
 });
@@ -49,6 +60,78 @@ function checkMotion() {
         }
     });
 
+}
+
+function initWayPoints() {
+    var section = $('.wayPointSection');
+
+    if (section.length) {
+
+// ======================================
+// Helper functions
+// ======================================
+// Get section or article by href
+        function getRelatedContent(el) {
+            return $($(el).attr('href'));
+        }
+
+// Get link by section or article id
+        function getRelatedNavigation(el) {
+            return $('.asideLink[href=#' + $(el).attr('id') + ']');
+        }
+
+// ======================================
+// Smooth scroll to content
+// ======================================
+        $('.asideLink').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({scrollTop: getRelatedContent(this).offset().top});
+            return false;
+        });
+
+// ======================================
+// Waypoints
+// ======================================
+// Default cwaypoint settings
+// - just showing
+        var wpDefaults = {
+            context: window,
+            continuous: true,
+            enabled: true,
+            horizontal: false,
+            offset: 0,
+            triggerOnce: false,
+            handler: function (direction) {
+                getRelatedNavigation(this).parent().addClass('_active').siblings().removeClass('_active');
+            }
+        };
+
+        section.waypoint(wpDefaults)
+
+        //section
+        //    .waypoint(function (direction) {
+        //        // Highlight element when related content
+        //        // is 10% percent from the bottom... 
+        //        // remove if below
+        //
+        //        console.log(direction);
+        //        getRelatedNavigation(this).toggleClass('_active', direction === 'down');
+        //    }, {
+        //        offset: '90%' // 
+        //    })
+        //    .waypoint(function (direction) {
+        //        // Highlight element when bottom of related content
+        //        // is 100px from the top - remove if less
+        //        // TODO - make function for this
+        //
+        //        console.log(direction);
+        //        getRelatedNavigation(this).toggleClass('_active', direction === 'up');
+        //    }, {
+        //        offset: function () {
+        //            return -$(this).height() + 100;
+        //        }
+        //    });
+    }
 }
 
 function initArticleSlider() {
@@ -73,6 +156,32 @@ function initArticleSlider() {
                 settings: "unslick"
             }
         ]
+    });
+}
+
+function initTabSlider() {
+    tabSlider = $('.tabSlider').each(function (ind) {
+        var slck = $(this);
+        
+        slck.slick({
+            dots: true,
+            infinite: false,
+            arrows: false,
+            mobileFirst: true,
+            speed: 300,
+            //prevArrow: '.prevArticle',
+            //nextArrow: '.nextArticle',
+            slide: '.tab_unit',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            appendDots: slck.parent().find('.tabDots'),
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: "unslick"
+                }
+            ]
+        });
     });
 }
 
@@ -162,6 +271,9 @@ function checkSameHeight() {
 function checkSlider() {
     if ($(window).width() > 767 && !articleSlider.find('.slick-list').length) {
         initArticleSlider();
+    }
+    if ($(window).width() < 768 && !($('.tabSlider .slick-list').length)) {
+        initTabSlider();
     }
 }
 
