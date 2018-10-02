@@ -1,11 +1,20 @@
 .aside_pagination {
+  @extend %global_flex_block_column_nowrap_center_center;
   @extend %vert_centr;
-  position: fixed;
-  display: none;
+  position: absolute;
+  right: 120px;
+  will-change: transform;
 
-  @include respond-to-min($resp_step_2) {
-    right: 120px;
-    display: block;
+  &._fixed {
+    position: fixed;
+  }
+
+  &._scrolled {
+    position: absolute;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    display: none;
   }
 }
 
@@ -29,7 +38,7 @@
 
     &:first-child {
       margin-top: 0;
-      
+
       &:before {
         display: none;
       }
@@ -44,9 +53,10 @@
   padding-right: 40px;
   text-transform: uppercase;
   color: #aeafaf;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.07em;
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -58,14 +68,14 @@
     top: 50%;
     margin-top: -8px;
   }
-  
+
   ._active & {
     color: $gl_blue;
-    
+
     &:before {
       background: $gl_blue;
     }
-    
+
     &:after {
       content: '';
       position: absolute;
@@ -77,7 +87,7 @@
       width: 42px;
       height: 42px;
     }
-    
+
   }
 }
 
@@ -241,7 +251,7 @@
 }
 
 .mob_only {
-  
+
   @include respond-to-min($resp_step_1) {
     display: none !important;
   }

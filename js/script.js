@@ -66,7 +66,9 @@ function initWayPoints() {
     var section = $('.wayPointSection');
 
     if (section.length) {
-
+        var magic = 65;
+        var asidePagination = $('.asidePagination').css('height', section.first()[0].offsetHeight);
+        
 // ======================================
 // Helper functions
 // ======================================
@@ -85,7 +87,10 @@ function initWayPoints() {
 // ======================================
         $('.asideLink').on('click', function (e) {
             e.preventDefault();
-            $('html,body').animate({scrollTop: getRelatedContent(this).offset().top});
+            var btn = $(this);
+            $('html,body').animate({scrollTop: getRelatedContent(this).offset().top}, function () {
+                btn.parent().addClass('_active').siblings().removeClass('_active');
+            });
             return false;
         });
 
@@ -94,7 +99,8 @@ function initWayPoints() {
 // ======================================
 // Default cwaypoint settings
 // - just showing
-        var wpDefaults = {
+
+        section.waypoint({
             context: window,
             continuous: true,
             enabled: true,
@@ -104,33 +110,35 @@ function initWayPoints() {
             handler: function (direction) {
                 getRelatedNavigation(this).parent().addClass('_active').siblings().removeClass('_active');
             }
-        };
+        });
 
-        section.waypoint(wpDefaults)
+        section.first().waypoint({
+            handler: function (direction) {
+                if (direction === 'down') {
+                    asidePagination.addClass('_fixed')//.css('margin-top', 0);
+                } else {
+                    asidePagination.removeClass('_fixed')//.css('margin-top', 0);
+                }
+            },
+            offset: function () {
+                //center of the section
+                return ((window.screen.height - section.first()[0].offsetHeight) / 2) - magic;
+            }
+        });
 
-        //section
-        //    .waypoint(function (direction) {
-        //        // Highlight element when related content
-        //        // is 10% percent from the bottom... 
-        //        // remove if below
-        //
-        //        console.log(direction);
-        //        getRelatedNavigation(this).toggleClass('_active', direction === 'down');
-        //    }, {
-        //        offset: '90%' // 
-        //    })
-        //    .waypoint(function (direction) {
-        //        // Highlight element when bottom of related content
-        //        // is 100px from the top - remove if less
-        //        // TODO - make function for this
-        //
-        //        console.log(direction);
-        //        getRelatedNavigation(this).toggleClass('_active', direction === 'up');
-        //    }, {
-        //        offset: function () {
-        //            return -$(this).height() + 100;
-        //        }
-        //    });
+        section.last().waypoint({
+            handler: function (direction) {
+                if (direction === 'down') {
+                    asidePagination.removeClass('_fixed').addClass('_scrolled').css('margin-top', section.last().offset().top - section.first()[0].offsetHeight + magic * 2);
+                } else {
+                    asidePagination.removeClass('_scrolled').addClass('_fixed').css('margin-top', 0);
+                }
+            },
+            offset: function () {
+                //center of the section
+                return -((window.screen.height - section.last()[0].offsetHeight) / 2);
+            }
+        });
     }
 }
 
@@ -162,7 +170,7 @@ function initArticleSlider() {
 function initTabSlider() {
     tabSlider = $('.tabSlider').each(function (ind) {
         var slck = $(this);
-        
+
         slck.slick({
             dots: true,
             infinite: false,
@@ -187,6 +195,11 @@ function initTabSlider() {
 
 function heroVideo() {
     var homepageVideo = document.getElementById('homepage-video');
+
+    if (!homepageVideo) {
+        return false;
+    }
+
     var startTime = parseInt(homepageVideo.getAttribute('data-start-time'));
     var sources = homepageVideo.getElementsByTagName('source');
     var isPlaying = false;

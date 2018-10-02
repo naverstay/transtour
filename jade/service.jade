@@ -7,17 +7,19 @@ html(lang='ru')
         .wrapper
             .base
                 div.main_content
-                    #hero_section.hero_block.heroBlock
-                        .hero_video_holder.heroVideoHolder
-                            //-iframe.hero_video.heroVideo(width="560" height="315" src="https://www.youtube.com/embed/WdLD2KOAbzo?autoplay=1&cc_load_policy=1&controls=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media") 
-                            video#homepage-video.hero_video.heroVideo(data-start-time="7" preload="auto" buffered="" playsinline="" poster="i/hero.jpg" loop="" muted="")
-                                source(src="video/video_2.mp4", type="video/mp4")
-
+                    #hero_section.hero_block._image(style='background-image:url(i/service_hero.jpg)')
                         .section_inner
                             .hero_caption Решения и услуги
                             p Решения, которые обеспечат вас уверенностью
                             
                     #solution_section.solution_section.wayPointSection
+                        .aside_pagination.asidePagination
+                            ul.pagination_list
+                                li._active: a.aside_p_link.asideLink(href='#solution_section'): span Услуги
+                                li: a.aside_p_link.asideLink(href='#assistance_section'): span Ассистент
+                                li: a.aside_p_link.asideLink(href='#optimization_section'): span Оптимизация
+                                li: a.aside_p_link.asideLink(href='#analytics_section'): span Анализ
+
                         .section_inner
                             h2.section_title Решения и услуги
                             ul.solution_list
@@ -68,8 +70,8 @@ html(lang='ru')
                             h2.section_title Ассистент
                             
                             ul.tab_controls
-                                li._active: a.tabLink.tab_link(href='#optimization_tab_1') Коммуникации в поездке
-                                li: a.tabLink.tab_link(href='#optimization_tab_2') Другие услуги
+                                li._active: a.tabLink.tab_link(href='#assistance_tab_1') Коммуникации в поездке
+                                li: a.tabLink.tab_link(href='#assistance_tab_2') Другие услуги
                                     
                             .tab_holder.tabSlider
                                 #assistance_tab_1.tab_unit
@@ -102,8 +104,8 @@ html(lang='ru')
                             h2.section_title Оптимизация
                             
                             ul.tab_controls
-                                li._active: a.tabLink.tab_link(href='#assistance_tab_1') Тревел-политика
-                                li: a.tabLink.tab_link(href='#assistance_tab_2') Перебронирование
+                                li._active: a.tabLink.tab_link(href='#optimization_tab_1') Тревел-политика
+                                li: a.tabLink.tab_link(href='#optimization_tab_2') Перебронирование
                                     
                             .tab_holder.tabSlider
                                 #optimization_tab_1.tab_unit
@@ -152,14 +154,6 @@ html(lang='ru')
                                             span Подобрать решение
                             .tabDots.tab_dots
                                 
-                .aside_pagination
-                    ul.pagination_list
-                        li: a.aside_p_link.asideLink(href='#solution_section'): span Услуги
-                        li: a.aside_p_link.asideLink(href='#assistance_section'): span Ассистент
-                        li: a.aside_p_link.asideLink(href='#optimization_section'): span Оптимизация
-                        li: a.aside_p_link.asideLink(href='#analytics_section'): span Анализ
-                    
-                
             +header()
             +footer()
             
