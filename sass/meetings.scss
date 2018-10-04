@@ -155,7 +155,7 @@
   img {
     display: inline-block;
     vertical-align: top;
-    max-width: 100%;
+    max-width: 80px;
   }
 
   @include respond-to-min($resp_step_1) {
