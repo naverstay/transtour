@@ -1,0 +1,49 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Transtour кейсы')
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    .hero_block._image(style='background-image:url(i/story_hero.jpg)')
+                        .section_inner
+                            .hero_caption Истории успеха
+                            p Как мы помогаем в достижении побед
+                            
+                    .filtration_section
+                        .section_inner
+                            .filter_block
+                                .filter_col
+                                    .filter_caption: span Направление деятельности:
+                                
+                                .filter_col
+                                    .select_w.action_select.select_box_v1
+                                        select.select2(data-placeholder='Название деятельности')
+                                            option(disabled selected)
+                                            option(value=1) Промышленность
+                                            option(value=2) Автомобилестроение
+                                            option(value=3) Продажа товаров
+                                
+                                .filter_col
+                                    a.btn_v2.fill_blue_btn.learn_more(href='#')
+                                        span Найти пример
+                                        
+                    .solution_section._filter
+                        .section_inner
+                            ul.solution_list._filter
+                                +loop_while(9)
+                                    li
+                                        .solution_block
+                                            .solution_caption.sameHeight
+                                                span Название направления
+        
+                                            p.sameHeight2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                            p
+                                                a.btn_v2.blue_btn.learn_more(href='story.html')
+                                                    span Подробнее
+                            
+            +header()
+            +footer()
+            

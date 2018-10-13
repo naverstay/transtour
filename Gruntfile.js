@@ -1,4 +1,4 @@
-// npm link grunt grunt-contrib-pug grunt-contrib-watch grunt-contrib-uglify grunt-contrib-imagemin grunt-wellington grunt-imageoptim load-grunt-tasks pug-inheritance
+// npm link grunt grunt-contrib-pug grunt-contrib-watch grunt-contrib-uglify grunt-contrib-imagemin grunt-wellington grunt-imageoptim imagemin-svgo imagemin-optipng imagemin-jpegtran imagemin-gifsicle load-grunt-tasks pug-inheritance
 
 module.exports = function (grunt) {
     grunt.initConfig({
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                         expand: true,
                         // cwd is 'current working directory'
                         cwd: 'i/',
-                        src: ['**/*.png'],
+                        src: ['**/*.png', '!compressed/*'],
                         // Could also match cwd line above. i.e. project-directory/img/
                         dest: 'i/compressed/',
                         ext: '.png'
@@ -78,10 +78,30 @@ module.exports = function (grunt) {
                         expand: true,
                         // cwd is 'current working directory'
                         cwd: 'i/',
-                        src: ['**/*.jpg'],
+                        src: ['**/*.jpg', '!compressed/*'],
                         // Could also match cwd. i.e. project-directory/img/
                         dest: 'i/compressed/',
                         ext: '.jpg'
+                    }
+                ]
+            },
+            svg: {
+                options: {
+                    pretty: true,
+                    removeViewBox: false,
+                    removeUselessStrokeAndFill: false,
+                    removeEmptyAttrs: false
+                },
+                files: [
+                    {
+                        // Set to true to enable the following options…
+                        expand: true,
+                        // cwd is 'current working directory'
+                        cwd: 'svg/',
+                        src: ['**/*.svg', '!compressed/*'],
+                        // Could also match cwd. i.e. project-directory/img/
+                        dest: 'svg/compressed/',
+                        ext: '.svg'
                     }
                 ]
             }

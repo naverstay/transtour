@@ -30,10 +30,38 @@
     padding: 16px 38px;
     font-weight: 700;
     font-size: 18px;
-    
+    line-height: 1.2;
+
     .slick-slide & {
       padding-left: 5px;
       padding-right: 5px;
+    }
+  }
+}
+
+.btn_v2 {
+  height: 48px;
+
+  &.learn_more {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 13px 38px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+
+    ._filter & {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .filter_block & {  
+      @include respond-to-max($resp_step_1) {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }
@@ -66,6 +94,19 @@
 
   &:active {
     color: #fff;
+    background: #002e6d;
+    border-color: #002e6d;
+  }
+}
+
+.fill_blue_btn {
+  @include transition_all(background .3s, color .3s);
+  color: #fff;
+  background: $gl_blue;
+  border: 1px solid $gl_blue;
+
+  &:hover,
+  &:active {
     background: #002e6d;
     border-color: #002e6d;
   }

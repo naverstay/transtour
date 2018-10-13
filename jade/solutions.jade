@@ -1,0 +1,91 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Transtour решения')
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    #hero_section.hero_block._image(style='background-image:url(i/solutions_hero.jpg)')
+                        .section_inner
+                            .hero_caption Детальная страница решения
+                            ul.hero_pagination
+                                li._active: a.hero_p_Link(href='#'): span Бронирование
+                                li: a.hero_p_Link(href='#'): span Поддержка
+                                li: a.hero_p_Link(href='#'): span Оптимизация
+                                li: a.hero_p_Link(href='#'): span Оптимизация
+                            
+                    .meetings_section
+                        .section_inner
+                            h2.section_title Умное бронирование
+                            .meeting_tip Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis 
+                            
+                            ul.solution_list
+                                li
+                                    .booking_unit
+                                        .booking_img
+                                            img(src='svg/money.svg')
+                                        .booking_caption Персональные тарифы
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                li
+                                    .booking_unit
+                                        .booking_img
+                                            img(src='svg/plane.svg')
+                                        .booking_caption Выбор поставщика
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                li
+                                    .booking_unitv
+                                        .booking_img
+                                            img(src='svg/ticket_plane.svg')
+                                        .booking_caption Перебронирование
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+
+                        .section_inner
+                            h2.section_title Связанные решения
+                            ul.solution_list._no_img
+                                li.motion
+                                    .solution_block
+                                        .solution_img._min_h
+                                            .solution_icon
+                                                img(src='svg/calendar.svg')
+
+                                        .solution_caption.sameHeight
+                                            span Поддержка
+
+                                        p.sameHeight2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        p
+                                            a.btn_v2.blue_btn.learn_more(href='#')
+                                                span Подробнее
+
+                                li
+                                    .solution_block
+                                        .solution_img._min_h
+                                            .solution_icon
+                                                img(src='svg/calendar.svg')
+
+                                        .solution_caption.sameHeight
+                                            span Оптимизация
+
+                                        p.sameHeight2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        p
+                                            a.btn_v2.blue_btn.learn_more(href='#')
+                                                span Подробнее
+
+                                li.motion.right
+                                    .solution_block
+                                        .solution_img._min_h
+                                            .solution_icon._yellow
+                                                img(src='svg/search.svg')
+
+                                        .solution_caption.sameHeight
+                                            span Анализ и отчетность
+
+                                        p.sameHeight2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        p
+                                            a.btn_v2.blue_btn.learn_more(href='#')
+                                                span Подробнее
+
+            +header()
+            +footer()
+            

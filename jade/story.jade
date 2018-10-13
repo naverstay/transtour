@@ -1,0 +1,72 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Transtour кейс')
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    .hero_block._image(style='background-image:url(i/service_hero.jpg)')
+                        .section_inner
+                            .hero_caption Пример внедрения<br>в компании Sollers
+                            
+                    .story_section
+                        .section_inner
+                            h2.section_title Что было изначально?
+                            
+                            ul.solution_list._story
+                                li
+                                    .story_block
+                                        .story_img
+                                            img(src='svg/bag.svg')
+                                        p Направление: производство
+                                li
+                                    .story_block
+                                        .story_img
+                                            img(src='svg/wallet.svg')
+                                        p Затраты на тревел: 1,2 млн. руб
+                                li
+                                    .story_block
+                                        .story_img
+                                            img(src='svg/shirt.svg')
+                                        p Сотрудники: 3000+
+                            
+                            .story_line
+                                
+                            ul.solution_list._story
+                                li
+                                    .story_caption Проблемы
+                                    ul.story_options
+                                        li Lorem ipsum dolor sit amet, consectetur 
+                                        li adipisicing elit, sed do eiusmod tempor
+                                        li incididunt ut labore et dolore magna aliqua.
+                                        
+                                li
+                                    .story_caption Решения
+                                    ul.story_options
+                                        li Lorem ipsum dolor sit amet, consectetur 
+                                        li adipisicing elit, sed do eiusmod tempor
+                                        li incididunt ut labore et dolore magna aliqua.
+                                li
+                                    .story_caption Результат
+                                    ul.story_options
+                                        li Lorem ipsum dolor sit amet, consectetur 
+                                        li adipisicing elit, sed do eiusmod tempor
+                                        li incididunt ut labore et dolore magna aliqua.
+                                
+                            .story_text
+                                h2.section_title Заголовок и текст в одну колонку
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde 
+                            
+                    .story_image_section
+                        img(src='i/case_1.jpg')
+                            
+                    .section_inner
+                        .story_text
+                            h2.section_title Заголовок и текст в одну колонку
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
+
+            +header()
+            +footer()
+            

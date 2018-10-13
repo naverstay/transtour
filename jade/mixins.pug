@@ -13,6 +13,7 @@ mixin dev_head(page_title)
         script(src='js/jquery1.10.js')
         script(src='js/jquery.waypoints.min.js')
         script(src='js/slick.js')
+        script(src='js/select2.js')
         script(src='js/script.js')
 
 mixin loop_while(counter)
@@ -25,7 +26,7 @@ mixin header()
     .header
         .section_inner.clearfix
             .logo_block
-                a.logo(href='#')
+                a.logo(href='index.html')
                     img(src='i/logo.png')
 
             ul.main_menu
@@ -37,10 +38,10 @@ mixin header()
                             a.sub_menu_link(href='service.html')
                                 span.link_text Бронирование
                         li.menu_item
-                            a.sub_menu_link(href='#')
+                            a.sub_menu_link(href='solutions.html')
                                 span.link_text Проживание
                         li.menu_item
-                            a.sub_menu_link(href='#')
+                            a.sub_menu_link(href='stories.html')
                                 span.link_text Персональный консультант
                         li.menu_item
                             a.sub_menu_link(href='#')

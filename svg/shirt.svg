@@ -1,0 +1,25 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="66" height="60.75" viewBox="0 0 66 60.75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc100;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #023a87;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_515" data-name="Фигура 515" class="cls-1" d="M1203,971l-6,12,2,2-1,25,5,11,5-12-1-24,1-3Z" transform="translate(-1170 -964)"/>
+  <path id="Фигура_511" data-name="Фигура 511" class="cls-2" d="M1184,971l-8,7,4,4-5,7,28,33Z" transform="translate(-1170 -964)"/>
+  <path id="Фигура_511_копия" data-name="Фигура 511 копия" class="cls-2" d="M1222,971l8,7-4,4,5,7-28,33Z" transform="translate(-1170 -964)"/>
+  <path id="Фигура_512" data-name="Фигура 512" class="cls-2" d="M1184,971l5-6,14,6-5,12Z" transform="translate(-1170 -964)"/>
+  <path id="Фигура_512_копия" data-name="Фигура 512 копия" class="cls-2" d="M1222,971l-5-6-14,6,5,12Z" transform="translate(-1170 -964)"/>
+  <path id="Фигура_518" data-name="Фигура 518" class="cls-2" d="M1177,979h-4v42.74h60V979h-4" transform="translate(-1170 -964)"/>
+</svg>

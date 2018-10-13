@@ -41,6 +41,8 @@ $(function ($) {
     initWayPoints();
 
     resizeUpdater();
+
+    initSelect2();
 });
 
 function getScrollTop() {
@@ -272,6 +274,18 @@ function setSameHeight(item, item_in_row) {
             blocks.eq(j).height(maxHeight);
         }
     }
+}
+
+function initSelect2() {
+    $('.select2').each(function (ind) {
+        var slct = $(this);
+
+        slct.select2({
+            minimumResultsForSearch: Infinity,
+            dropdownParent: slct.parent(),
+            width: '100%'
+        });
+    });
 }
 
 function checkSameHeight() {

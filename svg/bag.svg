@@ -1,0 +1,31 @@
+<svg id="icon1" xmlns="http://www.w3.org/2000/svg" width="72" height="61" viewBox="0 0 72 61">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #ffc100;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+        stroke: #023a87;
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        fill: #023a87;
+      }
+    </style>
+  </defs>
+  <rect id="Прямоугольник_31" data-name="Прямоугольник 31" class="cls-1" x="15" y="8" width="8" height="2"/>
+  <rect id="Прямоугольник_31_копия" data-name="Прямоугольник 31 копия" class="cls-1" x="48" y="8" width="8" height="2"/>
+  <path id="Фигура_14" data-name="Фигура 14" class="cls-2" d="M390.882,996v26h60.236V996" transform="translate(-385 -964)"/>
+  <path id="Фигура_10" data-name="Фигура 10" class="cls-2" d="M386,974h70v22a181.3,181.3,0,0,1-35,4,179,179,0,0,1-35-4V974Z" transform="translate(-385 -964)"/>
+  <path id="Фигура_11" data-name="Фигура 11" class="cls-2" d="M403,972v-7h35v7" transform="translate(-385 -964)"/>
+  <path id="Фигура_12" data-name="Фигура 12" class="cls-3" d="M414,972h13l1,37-6,4h-2l-7-4Z" transform="translate(-385 -964)"/>
+  <rect id="Прямоугольник_32" data-name="Прямоугольник 32" class="cls-4" x="26" y="29" width="19" height="13"/>
+  <path id="Фигура_13" data-name="Фигура 13" class="cls-5" d="M422,1005h-2v-8h2v8Z" transform="translate(-385 -964)"/>
+</svg>
