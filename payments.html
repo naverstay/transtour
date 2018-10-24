@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Transtour оплата</title> 
+    <!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&amp;amp;subset=cyrillic" media="all"/>
+    <link rel="stylesheet" href="styles/jquery.fancybox.css" media="all"/>
+    <link rel="stylesheet" href="styles/main_global.css" media="all"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="base">
+        <div class="main_content">
+          <div class="hero_block _image" style="background-image:url(i/payments_hero.jpg)">
+            <div class="section_inner">
+              <div class="hero_caption">Оплата заказа</div>
+            </div>
+          </div>
+          <div class="meetings_section _info">
+            <div class="section_inner">
+              <h2 class="section_title">Заголовок про оплату</h2>
+              <div class="meeting_tip">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+              <div class="meeting_tip">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+              <div class="meeting_tip">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            </div>
+          </div>
+          <div class="payment_section _filter">
+            <div class="section_inner">
+              <h2 class="section_title">Форма ввода для оплаты заказа</h2>
+              <ul class="tab_controls _ico">
+                <li class="_active"><a class="tabLink tab_link" href="#payment_tab_1"> <span class="tab_icon i-card"></span><span>Оплатить кредитной картой</span></a></li>
+                <li><a class="tabLink tab_link" href="#payment_tab_2"> <span class="tab_icon i-terminal"></span><span>оплата через терминал ВТБ</span></a></li>
+              </ul>
+              <div class="tab_holder tabSlider">
+                <div class="tab_unit" id="payment_tab_1">
+                  <div class="text_center _active mob_only"><span class="tabLink tab_link"><span class="tab_icon i-card"></span><span>Оплатить кредитной картой</span></span></div>
+                  <div class="payment_form_holder">
+                    <form action="#">
+                      <div class="payment_block">
+                        <div class="payment_caption">Выберите тип оплаты:</div>
+                        <div class="form_row">
+                          <label class="f_check">
+                            <input class="hidden_input" type="checkbox" checked><span class="f_check_text">Оплата Авиобилета</span>
+                          </label>
+                        </div>
+                        <div class="form_row">
+                          <label class="f_check">
+                            <input class="hidden_input" type="checkbox"><span class="f_check_text">Оплата гостиницы, отеля и пр. услуги</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="payment_block">
+                        <div class="payment_caption">Введите информацию о заказе:</div>
+                        <div class="form_row">
+                          <div class="form_col"><span class="dm">
+                              <label for="order_id">Введите номер заказа или PNR авиабилета:</label></span></div>
+                          <div class="form_col">
+                            <div class="input_w _cur _mob_reset">
+                              <input class="input_v1" id="order_id" placeholder="Номер заказа / PNR">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form_row">
+                          <div class="form_col"><span class="dm">
+                              <label for="order_price">Введите стоимость заказа, уточнив ее у менеджера:</label></span></div>
+                          <div class="form_col">
+                            <div class="input_w _cur"><span class="payment_currency">руб.</span>
+                              <input class="input_v1" id="order_price" placeholder="Сумма вида 100.00">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form_row">
+                          <div class="form_col_warn"><span class="dm"><b>Внимание! Будьте внимательны при вводе сумы платежа, чтоб избежать доплаты / возврата по Вашей кредитной карте.</b></span></div>
+                          <div class="form_col _small"> 
+                            <button class="btn_v1 fill_blue_btn pay_btn">Оплатить</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="tab_unit _col" id="payment_tab_2" style="display:none">
+                  <div class="text_center _active mob_only"><span class="tabLink tab_link"><span class="tab_icon i-terminal"></span><span>оплата через терминал ВТБ</span></span></div>
+                  <div class="payment_tip">Нажмите на картинку для увеличения</div>
+                  <ul class="payment_steps">
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">1</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">2</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">3</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">4</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">5</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">6</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">7</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">8</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">9</span></a></li>
+                    <li><a class="payment_step_preview" href="i/article_hero.jpg" data-fancybox="gallery"><img src="i/payment_step.jpg"><span class="payment_step_index">10</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tabDots tab_dots"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="section_inner clearfix">
+          <div class="logo_block"><a class="logo" href="index.html"><img src="i/logo.png"/></a></div>
+          <ul class="main_menu">
+            <li class="menu_item _submenu"><a class="menu_link subMenuLink" href="#"><span class="link_text">Управление поездками</span></a>
+              <div class="sub_menu_w">
+                <ul class="sub_menu">
+                  <li class="menu_item"><a class="sub_menu_link" href="service.html"><span class="link_text">Бронирование</span></a></li>
+                  <li class="menu_item"><a class="sub_menu_link" href="solutions.html"><span class="link_text">Проживание</span></a></li>
+                  <li class="menu_item"><a class="sub_menu_link" href="stories.html"><span class="link_text">Персональный консультант</span></a></li>
+                  <li class="menu_item"><a class="sub_menu_link" href="article.html"><span class="link_text">Финансовая оптимизация</span></a></li>
+                  <li class="menu_item"><a class="sub_menu_link" href="payments.html"><span class="link_text">Анализ и отчетность</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu_item"><a class="menu_link" href="meetings.html"><span class="link_text">Корпоративные мероприятия</span></a></li>
+            <li class="menu_item"><a class="menu_link" href="#"><span class="link_text">Бизнес консалтинг и поддержка</span></a></li>
+            <li class="menu_item"><a class="menu_link" href="#"><span class="link_text">О компании</span></a></li>
+            <li class="menu_item"><a class="menu_link" href="#"><span class="link_text">Контакты</span></a></li>
+          </ul><a class="mob_menu_btn mobMenuBtn" href="#"><span></span></a>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="section_inner">
+          <div class="footer_col _col_1">
+            <div class="footer_caption">Компания:</div>
+            <ul class="footer_menu">
+              <li><a class="footer_link" href="#"><span>Управление поездками</span></a></li>
+              <li><a class="footer_link" href="#"><span>Корпоративные мероприятия</span></a></li>
+              <li><a class="footer_link" href="#"><span>Бизнес консалтинг и поддержка</span></a></li>
+            </ul>
+            <ul class="footer_menu">
+              <li><a class="footer_link" href="#"><span>О компании</span></a></li>
+              <li><a class="footer_link" href="#"><span>Контакты</span></a></li>
+            </ul>
+          </div>
+          <div class="footer_col _col_2">
+            <div class="footer_caption">Контакты:</div>
+            <ul class="footer_menu">
+              <li><a class="footer_link _icon i-pin" href="#"><span>г. Москва</span></a></li>
+              <li><a class="footer_link _icon i-phone" href="tel:0671234567"><span>067 123 45 67</span></a></li>
+            </ul>
+          </div>
+          <div class="footer_col _col_3">
+            <div class="footer_caption">Мы в соцсетях:</div>
+            <ul class="footer_action">
+              <li><a class="action_link i-fb" href="#"> </a></li>
+              <li><a class="action_link i-in" href="#"> </a></li>
+              <li><a class="action_link i-tg" href="#"> </a></li>
+            </ul>
+          </div>
+          <div class="copyright">© 2018 Transtour</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

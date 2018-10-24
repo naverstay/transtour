@@ -16,6 +16,11 @@ $(function ($) {
     $body.delegate('.tabLink', 'click', function (e) {
         var btn = $(e.target), target = $(btn.attr('href'));
 
+        if (!btn.attr('href')) {
+            btn = btn.closest('a');
+            target = $(btn.attr('href'));
+        }
+
         if (target.length) {
             target.show().siblings().hide();
             btn.parent().addClass('_active').siblings().removeClass('_active');
@@ -70,7 +75,7 @@ function initWayPoints() {
     if (section.length) {
         var magic = 65;
         var asidePagination = $('.asidePagination').css('height', section.first()[0].offsetHeight);
-        
+
 // ======================================
 // Helper functions
 // ======================================

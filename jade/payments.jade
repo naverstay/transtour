@@ -1,0 +1,93 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Transtour оплата', true)
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    .hero_block._image(style='background-image:url(i/payments_hero.jpg)')
+                        .section_inner
+                            .hero_caption Оплата заказа
+                            
+                    .meetings_section._info
+                        .section_inner
+                            h2.section_title Заголовок про оплату
+                            .meeting_tip Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+                            .meeting_tip Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+                            .meeting_tip Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                        
+                    .payment_section._filter
+                        .section_inner
+                            h2.section_title Форма ввода для оплаты заказа
+                            
+                            ul.tab_controls._ico
+                                li._active
+                                    a.tabLink.tab_link(href='#payment_tab_1') 
+                                        span.tab_icon.i-card
+                                        span Оплатить кредитной картой
+                                    
+                                li
+                                    a.tabLink.tab_link(href='#payment_tab_2') 
+                                        span.tab_icon.i-terminal
+                                        span оплата через терминал ВТБ
+
+                            .tab_holder.tabSlider
+                                #payment_tab_1.tab_unit
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link
+                                            span.tab_icon.i-card
+                                            span Оплатить кредитной картой
+                                    .payment_form_holder: form(action='#')
+                                        .payment_block
+                                            .payment_caption Выберите тип оплаты:
+                                            .form_row
+                                                label.f_check
+                                                    input.hidden_input(type='checkbox' checked)
+                                                    span.f_check_text Оплата Авиобилета
+                                            .form_row
+                                                label.f_check
+                                                    input.hidden_input(type='checkbox')
+                                                    span.f_check_text Оплата гостиницы, отеля и пр. услуги
+                                                
+                                        .payment_block
+                                            .payment_caption Введите информацию о заказе:
+                                            .form_row
+                                                .form_col: span.dm: label(for="order_id") Введите номер заказа или PNR авиабилета:
+                                                .form_col
+                                                    .input_w._cur._mob_reset
+                                                        input#order_id.input_v1(placeholder='Номер заказа / PNR')
+                                            .form_row
+                                                .form_col: span.dm: label(for="order_price") Введите стоимость заказа, уточнив ее у менеджера:
+                                                .form_col
+                                                    .input_w._cur
+                                                        span.payment_currency руб.
+                                                        input#order_price.input_v1(placeholder='Сумма вида 100.00')
+                                                        
+                                            .form_row
+                                                .form_col_warn: span.dm: b Внимание! Будьте внимательны при вводе сумы платежа, чтоб избежать доплаты / возврата по Вашей кредитной карте.
+                                                .form_col._small 
+                                                    button.btn_v1.fill_blue_btn.pay_btn Оплатить
+                                                
+
+                                #payment_tab_2.tab_unit._col(style='display:none')
+                                    .text_center._active.mob_only
+                                        span.tabLink.tab_link
+                                            span.tab_icon.i-terminal
+                                            span оплата через терминал ВТБ
+                                    .payment_tip Нажмите на картинку для увеличения
+                                        
+                                    ul.payment_steps
+                                        - var n = 0;
+                                        while n < 10
+                                            - n++
+                                            li: a.payment_step_preview(href='i/article_hero.jpg' data-fancybox="gallery")
+                                                img(src='i/payment_step.jpg')
+                                                span.payment_step_index= n
+                            .tabDots.tab_dots
+
+            +header()
+            +footer()

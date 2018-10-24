@@ -1,4 +1,4 @@
-mixin dev_head(page_title)
+mixin dev_head(page_title, payments)
     head
         title=page_title
         | 
@@ -9,10 +9,14 @@ mixin dev_head(page_title)
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&amp;subset=cyrillic', media='all')
+        - if (payments)
+            link(rel='stylesheet', href='styles/jquery.fancybox.css', media='all')
         link(rel='stylesheet', href='styles/main_global.css', media='all')
         script(src='js/jquery1.10.js')
         script(src='js/jquery.waypoints.min.js')
         script(src='js/slick.js')
+        - if (payments)
+            script(src='js/jquery.fancybox.js')
         script(src='js/select2.js')
         script(src='js/script.js')
 
@@ -44,10 +48,10 @@ mixin header()
                             a.sub_menu_link(href='stories.html')
                                 span.link_text Персональный консультант
                         li.menu_item
-                            a.sub_menu_link(href='#')
+                            a.sub_menu_link(href='article.html')
                                 span.link_text Финансовая оптимизация
                         li.menu_item
-                            a.sub_menu_link(href='#')
+                            a.sub_menu_link(href='payments.html')
                                 span.link_text Анализ и отчетность
                                 
                 li.menu_item
@@ -66,7 +70,7 @@ mixin header()
             a.mob_menu_btn.mobMenuBtn(href='#')
                 span
 
-mixin footer()
+mixin footer(payments)
     .footer
         .section_inner
             .footer_col._col_1

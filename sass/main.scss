@@ -30,8 +30,17 @@ body {
   overflow-x: hidden;
 }
 
-.base {
+.fl {
+  float: left;
+}
 
+.fr {
+  float: right;
+}
+
+.dm {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .section_inner {
@@ -133,6 +142,20 @@ body {
   position: absolute;
   min-width: 100%;
   min-height: 100%;
+}
+
+.hero_label {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+
+  @include respond-to-min($resp_step_1) {
+    font-size: 24px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 10px;
+  }
 }
 
 .hero_caption {
@@ -506,7 +529,7 @@ body {
 
   &._story {
     padding-bottom: 0;
-    
+
     .section_title + & {
       margin-top: -10px;
 
@@ -518,7 +541,7 @@ body {
         margin-top: 0;
       }
     }
-    
+
     > li {
       margin-bottom: 25px;
 
@@ -892,6 +915,16 @@ body {
       padding: 0 70px;
     }
   }
+
+  &._ico {
+    padding-top: 0;
+
+    @include respond-to-max($resp_step_2) {
+      li {
+        padding: 0 20px;
+      }
+    }
+  }
 }
 
 .tab_link {
@@ -913,6 +946,25 @@ body {
     left: 0;
   }
 
+  ._ico & {
+    padding-left: 40px;
+
+    @include respond-to-min($resp_step_1) {
+      padding: 45px 0 0;
+    }
+  }
+
+  .payment_section & {
+
+    @include respond-to-max($resp_step_1) {
+      display: block;
+      padding-left: 40px;
+      font-size: 14px;
+      line-height: 35px;
+      text-align: left;
+    }
+  }
+
   ._active & {
     color: $gl_blue;
     cursor: default;
@@ -924,6 +976,24 @@ body {
 
   @include respond-to-max($resp_step_1) {
     margin-bottom: 35px;
+  }
+}
+
+.tab_icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  font-size: 30px;
+  line-height: 35px;
+  width: 40px;
+
+  @include respond-to-min($resp_step_1) {
+    left: 50%;
+    margin-left: -25px;
+    font-size: 40px;
+    line-height: 45px;
+    width: 50px;
   }
 }
 
@@ -1062,8 +1132,19 @@ body {
     display: block !important;
   }
 
+  .payment_section & {
+
+    @include respond-to-max($resp_step_1) {
+      padding-top: 0;
+    }
+  }
+
   @include respond-to-min($resp_step_1) {
     @include flex_block(row nowrap, center, center);
+  }
+
+  &._col {
+    flex-flow: column nowrap;
   }
 }
 

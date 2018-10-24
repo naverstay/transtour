@@ -1,6 +1,14 @@
 .meetings_section {
   padding: 85px 0 0;
 
+  &._info {
+    padding-top: 55px;
+
+    @include respond-to-max($resp_step_2) {
+      padding-bottom: 40px;
+    }
+  }
+
   @include respond-to-min($resp_step_1) {
     padding-top: 95px;
   }
@@ -8,6 +16,10 @@
   @include respond-to-min($resp_step_2) {
     padding-top: 65px;
     padding-bottom: 50px;
+
+    &._info {
+      padding-top: 95px;
+    }
   }
 }
 
@@ -25,6 +37,14 @@
 
   @include respond-to-min($resp_step_2) {
     margin-bottom: 70px;
+  }
+
+  ._info & {
+    margin-bottom: 25px;
+
+    @include respond-to-min($resp_step_1) {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -583,7 +603,7 @@
   @include respond-to-min($resp_step_1) {
     margin-top: 5px;
     margin-bottom: 30px;
-    
+
     p {
       margin-top: 30px;
     }

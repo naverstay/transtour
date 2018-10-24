@@ -1,5 +1,5 @@
 {
-  "prod": true,
+  "prod": false,
   "scripts": [
     "js/jquery1.10.js",
     "js/jquery.validationEngine.js",

@@ -1,0 +1,100 @@
+.input_w {
+  position: relative;
+
+  .form_col & {
+    margin-bottom: 20px;
+  }
+
+  &._cur {
+    padding-right: 40px;
+  }
+  
+  &._mob_reset {
+
+    @include respond-to-max($resp_step_1) {
+      padding-right: 0;
+    }
+  }
+}
+
+.payment_currency {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: -10px;
+  color: #4c4c4c;
+  width: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.input_v1 {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 19px 17px;
+  background: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: $default_t_color;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+}
+
+.hidden_input {
+  display: none;
+}
+
+.f_check {
+  display: inline-block;
+  vertical-align: middle;
+
+  .f_check_text {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 40px;
+    line-height: 1.2;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      top: 50%;
+      left: 0;
+      margin-top: -14px;
+      background: #00378b;
+      border-radius: 2px;
+    }
+
+    @include respond-to-min($resp_step_1) {
+      padding-left: 48px;
+    }
+  }
+
+  .hidden_input:checked {
+    ~ .f_check_text {
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 9px;
+        margin-top: -5px;
+        background: #fff;
+        border-radius: 1px;
+      }
+    }
+  }
+}
+
+
